@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>দরকার কতটুকু?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+      min-height: 100vh;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      padding: 28px 14px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .page-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      text-align: center;
+      margin-bottom: 22px;
+      letter-spacing: -0.2px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .page-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 2px;
+      background: #3b82f6;
+      border-radius: 2px;
+    }
+
+    .text-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px 20px;
+      margin-bottom: 20px;
+      white-space: pre-line;
+      word-wrap: break-word;
+      /* Soft layered box shadow for depth */
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                  0 10px 15px -3px rgba(0, 0, 0, 0.04),
+                  0 0 0 1px rgba(0, 0, 0, 0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .text-box:hover {
+      box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.06), 
+                  0 16px 24px -4px rgba(0, 0, 0, 0.06);
+    }
+
+    .url-button {
+      display: inline-flex;
+      align-items: center;
+      margin: 5px 0;
+      padding: 7px 13px;
+      background: #ffffff;
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 13px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      word-break: break-all;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .url-button:hover {
+      background: #eff6ff;
+      border-color: #93c5fd;
+      color: #1d4ed8;
+      box-shadow: 0 3px 6px -1px rgba(37, 99, 235, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .url-button:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="page-title">দরকার কতটুকু?</h1>
+
+    <!-- First Text Box -->
+    <div class="text-box">সবথেকে বড় শক্তি হ’ল – নেটওয়ার্কিংয়ের শক্তি।
+তারসঙ্গে দরকার – ভলিউম ও কোয়ালিটি অব পোস্টস অন প্রোফাইল টাইমলাইন
+
+প্রথম বাধা – নেটওয়ার্কিং-র জন্য ম্যানুয়্যাল রিসার্চ ও কোন কিওয়ার্ড দিয়ে সার্চ করবো?
+দ্বিতীয় বাধা – নিজের টাইমলাইনে পোস্টের জন্য রেলিভ্যান্ট টপিক সিলেকসন
+
+আটকে পড়েছি – এই দুটো সমস্যার উত্তর ও পথ খুঁজে না পেয়ে।
+
+প্রোডাক্ট তৈরি বা ই-বুক লেখা, রিপোর্ট লেখা, স্পেশাল কনটেন্ট লেখা, বা অন্যান্য সাধারন কনটেন্ট লেখাটা কোনও সমস্যাই নয়…
+
+আসল সমস্যাই হ’ল – নেটওয়ার্কিং – নিজের কনটেন্টকে নিজেই এক্সপোজার দেওয়া।
+
+১, ম্যানুয়্যাল লেবার – পোস্ট ইউ আর এল স্ক্র্যাপিং
+২, কীওয়ার্ড টু ইউজ ফর সারচিং দ্য রেলিভ্যান্ট পোস্টস
+
+এবার আর একটা সুবিধে তৈরি হয়েছে – প্রোডাক্ট, রিপোর্ট, ব্লগ পোস্ট ছাড়াও শুধুমাত্র সোস্যাল নেটওয়ার্কিং সাইটে নেটওয়ার্কিং করে ওয়ার্ম-আপ করার পথটাও খুলে গেছে।</div>
+
+    <!-- Second Text Box -->
+    <div class="text-box">রিসোর্সেস 
+
+সার্চ করার কীওয়ার্ড (কনটেন্ট – ৬ কম্পোনেন্ট + ২ ফলো আপ)
+
+<a class="url-button" href="https://spmhqo.github.io/fyb/6-compo.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/fyb/6-compo.html</a>
+<a class="url-button" href="https://spmhqo.github.io/fyb/6-compo-fu.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/fyb/6-compo-fu.html</a>
+<a class="url-button" href="https://spmhqo.github.io/schedule/schedule-keywords.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/schedule/schedule-keywords.html</a>
+
+সিডিউল তৈরি (সিডিউল)
+
+<a class="url-button" href="https://spmhqo.github.io/schedule/" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/schedule/</a>
+
+পোস্টের উত্তর লেখা (রিপ্লাই জেনি)
+
+<a class="url-button" href="https://spmhqo.github.io/crm/reply-genie.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/crm/reply-genie.html</a>
+
+রিডার কোশ্চেন ফাইন্ডার
+
+<a class="url-button" href="https://spmhqo.github.io/z/reder-question-finder.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/z/reder-question-finder.html</a>
+
+অ্যান্সার রিডার কোশ্চেন ইন ব্লগ প্লাস সোস্যাল মিডিয়া পোস্ট 
+<a class="url-button" href="https://spmhqo.github.io/pp/answer-readers-question.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/pp/answer-readers-question.html</a>
+<a class="url-button" href="https://spmhqo.github.io/pp/arqfi.html" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/pp/arqfi.html</a>
+
+সেন্ট্রাল টপিক অব ডিসকাসন-র স্পাইসেস 
+
+<a class="url-button" href="https://spmhqo.github.io/pp/" target="_blank" rel="noopener noreferrer">https://spmhqo.github.io/pp/</a></div>
+
+  </div>
+
+</body>
+</html>
