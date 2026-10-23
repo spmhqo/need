@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Letter Analysis - for affiliate marketing</title>
+  <link rel="icon" href="spm.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-gradient-start: #020617;
+      --bg-gradient-end: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-primary: #22d3ee;
+      --accent-hover: #67e8f9;
+      --accent-success: #10b981;
+      --accent-danger: #f43f5e;
+      --code-bg: rgba(0, 0, 0, 0.3);
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: fixed linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 60px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .sub-header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-primary);
+      letter-spacing: 0.02em;
+    }
+
+    .prompt-workflow {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .step-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .step-label {
+      font-weight: 800;
+      font-size: 0.8rem;
+      background: var(--accent-primary);
+      color: #020617;
+      padding: 5px 16px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .prompt-content {
+      background: var(--code-bg);
+      padding: 25px;
+      border-radius: 12px;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      white-space: pre-wrap;
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 22px;
+      line-height: 1.6;
+      word-break: break-word;
+      max-height: 580px;
+      overflow-y: auto;
+    }
+
+    .prompt-content::-webkit-scrollbar { width: 8px; }
+    .prompt-content::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+    .prompt-content::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 4px; }
+
+    .btn {
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s;
+      width: 100%;
+      text-decoration: none;
+      border: none;
+    }
+
+    .copy-btn {
+      background: rgba(34, 211, 238, 0.1);
+      color: var(--accent-primary);
+      border: 1px solid var(--accent-primary);
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-primary);
+      color: #020617;
+    }
+
+    .copy-btn.copied {
+      background: var(--accent-success);
+      border-color: var(--accent-success);
+      color: white;
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 40px;
+      width: 100%;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .sub-header { font-size: 1rem; }
+      .step-card { padding: 22px; }
+      .prompt-content { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Sales Letter Analysis</h1>
+      <p class="sub-header">(for affiliate marketing)</p>
+    </header>
+
+    <div class="prompt-workflow">
+      
+      <!-- Prompt Result Cards -->
+      <div id="promptsContainer">
+        <!-- Prompts injected by JavaScript -->
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const templates = [
+      {
+        id: 1,
+        text: `TASK: ANALYSE AN UPLOADED SALES LETTER AND IDENTIFY THE PRODUCT, MARKET, AND CONTENT OPPORTUNITIES
+
+Read the uploaded sales letter carefully and analyse it to identify the product or service being promoted, its market category, what it offers, the primary keyword to target its market, how educational or informational content can connect with the offer, and what potential content topics could be developed around it.
+
+Base your analysis primarily on information explicitly stated or reasonably supported by the sales letter. Do not invent product features, benefits, claims, or other details that the document does not support.
+
+Present your findings using the following structure:
+
+Product Name:
+
+Identify the name of the product or service being promoted. If the exact name cannot be identified, write "Not clearly identified."
+
+Category:
+
+Identify the primary industry, niche, or subject category to which the product or service belongs. Be specific enough to distinguish its actual subject from a broader category.
+
+What it offers:
+
+Summarise what the product or service provides, including its main purpose, the problem it addresses, the solution it offers, and the relevant features or resources described in the sales letter. Keep the explanation concise and factual.
+
+Primary Keyword:
+
+Identify the single best Primary Keyword to use to tap into the market relevant to this product or service.
+
+Choose a keyword that represents the central subject, problem, solution, or area of interest through which potential customers might discover relevant content.
+
+Follow these guidelines:
+1. Prioritise a clear, relevant keyword that represents the market surrounding the offer, rather than automatically choosing the product name or brand.
+2. Consider the product's main purpose, the problem it solves, the solution it provides, and the subject people would likely search for when looking for relevant information.
+3. Prefer a keyword that can serve as a foundation for developing related secondary keywords, keyword clusters, and content topics.
+4. Choose one primary keyword, not a list of alternatives.
+5. Do not claim that the keyword has high search volume, low competition, or strong commercial intent unless supporting keyword research has been provided or conducted.
+6. If the sales letter does not provide enough information to identify a reliable keyword, state the uncertainty and provide the best-supported candidate, explaining the limitation briefly.
+
+Why it fits:
+
+Explain how the product or service could connect naturally with educational, informational, or problem-solving content related to its subject.
+
+Identify the relationship between the audience's relevant problems, the subject of the content, and the offer. Explain how content built around the Primary Keyword could introduce relevant concepts, answer questions, or help readers understand possible solutions before they encounter the offer.
+
+Do not assume that the product is suitable for every audience.
+
+Potential content:
+
+Suggest specific content topics that could provide useful information related to the product's subject and create a natural connection with the offer.
+
+Prioritise topics that:
+- Address relevant problems or questions.
+- Explain useful concepts, methods, or solutions.
+- Help readers understand common mistakes or evaluate possible approaches.
+- Relate naturally to the identified Primary Keyword and the product's actual offering.
+
+Provide 5–7 specific content topic ideas. Avoid generic topics that have little connection with the offer.
+
+Analysis guidelines:
+
+1. Treat the uploaded sales letter as the primary source of information.
+2. Distinguish explicitly stated facts from reasonable interpretations. If an important detail is missing or unclear, say so rather than guessing.
+3. Focus on understanding the actual offer, not merely repeating the sales letter's promotional language.
+4. Identify the Primary Keyword based on the market's central subject, not just the wording used in the sales letter.
+5. Keep the output concise, clear, practical, and easy to use for content planning.
+6. Do not turn the response into a complete keyword research report, content calendar, or promotional campaign.
+7. Do not assume any previous conversation, product knowledge, or external information. Make the analysis self-contained and grounded in the uploaded document.
+
+Now analyse the uploaded sales letter and present the findings using the six headings specified above.`
+      }
+    ];
+
+    function createCards() {
+      const container = document.getElementById('promptsContainer');
+      container.innerHTML = '';
+      templates.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'step-card';
+        card.innerHTML = `
+          <div class="step-header">
+            <span class="step-label">Prompt #${t.id}</span>
+          </div>
+          <div class="prompt-content" id="p${t.id}"></div>
+          <button class="btn copy-btn" onclick="copyText('p${t.id}', this)">
+            <span>Copy Prompt #${t.id}</span>
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderPrompts() {
+      templates.forEach(t => {
+        document.getElementById(`p${t.id}`).innerText = t.text;
+      });
+    }
+
+    function copyText(id, btn) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = `<span>Copied to Clipboard!</span>`;
+        btn.classList.add('copied');
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Initialize on page load
+    window.onload = () => {
+      createCards();
+      renderPrompts();
+    };
+  </script>
+</body>
+</html>
